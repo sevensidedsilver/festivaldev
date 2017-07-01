@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="./dist/all.css">
+
+  <title>Rhapsody Festival | Eastern NC</title></head>
+<body ng-controller='homeCtrl'>
+
+
+  <div id="nav">
+
+
+
+
+
+
+
+    <a id="logolink" ui-sref="home" ng-click="hideMenu()">
+      <img src="./app/images/logo.png" alt="Home logo">
+    </a>
+
+    <div class="navMenu">
+
+        <div ui-sref="home" class="menuItem">
+          <p>HOME</p>
+        </div>
+        <div ui-sref="forum" class="menuItem">
+          <p>FORUM</p>
+        </div>
+        <div ui-sref="prepare" class="menuItem">
+          <p>PREPARE</p>
+        </div>
+        <div ui-sref="principles" class="menuItem">
+          <p>PRINCIPLES</p>
+        </div>
+        <div ui-sref="fire" class="menuItem">
+          <p>FIRE</p>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="grab" ng-click = "togglemenu()">
+      <div class="bars">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div style="height: 60px"></div> -->
+  <div ng-class="menuclass">
+
+    <div class="mobile-menu-row">
+      <a ui-sref="home" ng-click="togglemenu()"><p>HOME</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="forum" ng-click="togglemenu()"><p>TICKETS</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="forum" ng-click="togglemenu()"><p>RHAPHORUM</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="prepare" ng-click="togglemenu()"><p>PREPARE</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="principles" ng-click="togglemenu()"><p>PRINCIPLES</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="fire" ng-click="togglemenu()"><p>FIRE</p></a>
+    </div>
+  </div>
+
+
+  <ui-view></ui-view>
+
+
+  <footer>
+    <div class="footerbits">
+      <div class="footerRow">
+        <div class="footerColumn">
+          maybe a menu?
+        </div>
+        <div class="footerColumn">
+          maybe some contact info?
+        </div>
+        <div class="footerColumn">
+          maybe associated sites?
+        </div>
+      </div>
+
+
+
+      <div class="footerRow">
+        <div class="copyright">
+          <p>Copyright 2017</p>
+          <p>Design/Dev by Sean Ruffolo</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+</body>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script> -->
+<!-- <script scr="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script> -->
+<script src="https://use.fontawesome.com/983040db07.js"></script>
+
+<script src="./dist/all.js"></script>
+
+</html>

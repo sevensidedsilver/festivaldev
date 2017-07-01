@@ -1,0 +1,230 @@
+.inTheThread {
+  background: url("../app/images/space-bg.png");
+
+}
+
+.threadTopper {
+  background: rgba(255, 255, 255, 0.88);
+  margin-top: 80px;
+  padding: 13px;
+  border-radius: 12px;
+
+}
+
+.threadDiv {
+    min-height: 100vh;
+}
+.backForum {
+
+}
+
+
+
+.star {
+    font-size: 35px;
+    color: #a8a67a;
+    padding-top: 4px;
+    padding-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 155px;
+    margin-bottom: 16px;
+    cursor: url("../app/images/cursor.png"), auto;
+}
+
+.star p {
+    font-size: 12px;
+    display: inline;
+}
+
+.unstar i.fa.fa-star.fa-6 {
+    color: black;
+}
+
+.unstar {
+    font-size: 35px;
+    color: #a8a67a;
+    padding-top: 4px;
+    padding-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 155px;
+    margin-bottom: 16px;
+    cursor: url("../app/images/cursor.png"), auto;
+}
+
+.unstar p {
+    font-size: 12px;
+    display: inline;
+}
+
+button.reportThread {
+    font-size: 8px;
+    border: 0;
+    color: red;
+    cursor: pointer;
+}
+
+button.reportThread:hover {
+    cursor: alias;
+    background: black;
+}
+
+comments.ng-scope {
+    display: block;
+    padding-top: 11px;
+}
+
+comments comments {
+    padding: 5px 4px 4px 10px;
+    background: rgba(0, 11, 107, 0.16);
+    }
+
+
+
+.comment_content {
+    font-size: 15px;
+    padding: 6px 0;
+}
+
+.comment_author {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple);
+}
+.top-level-comment {
+      margin-bottom: 6px;
+}
+.top-level-comment.ng-scope {
+    padding: 8px 0;
+
+}
+
+.flat-list a {
+    padding: 0 8px 0 0;
+    font-weight: 700;
+}
+
+time.ng-binding {
+    font-size: 11px;
+    color: rgba(150, 150, 150, 0.89);
+}
+
+.ThreadInfo p {
+    color: grey;
+}
+
+.threadText p {
+    color: black;
+    font-size: 14px;
+}
+
+span.threadmaker.ng-binding {
+    color: var(--purple);
+}
+
+.commentArea {
+  margin-top: 20px;
+  background: white;
+  padding: 13px;
+  border-radius: 14px;
+}
+
+pre.ng-binding {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+
+
+.replyAction {
+    margin-top: 1em;
+}
+
+.replyActions {
+    margin-top: 1em;
+}
+
+button.postReply {
+    border: 0;
+    padding: 7px 15px;
+    cursor: url("../app/images/cursor.png"), auto;
+
+}
+
+button.postReply {
+    border: 0;
+    padding: 7px 15px;
+    cursor: url("../app/images/cursor.png"), auto;
+
+}
+
+li.reply-button {
+    padding: 3px;
+    background: var(--blue);
+    border-radius: 5px;
+    cursor: url("../app/images/cursor.png"), auto;
+
+}
+
+li.report-button {
+    padding: 3px;
+    cursor: alias;
+}
+
+button.postReply:hover {
+
+      -webkit-animation:rainbow 1s infinite;
+      -ms-animation:rainbow 1s infinite;
+      -o-animation:rainbow 1s infinite;
+      animation:rainbow 1s infinite;
+      background: black;
+
+}
+button.cancelReply {
+    border: 0;
+    margin-left: 8px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+button.cancelReply:hover {
+    color: black;
+    background: white;
+}
+/*limit digest limit comments depth*/
+comments comments comments comments comments comments comments comments comments comments li.reply-button {
+    display: none;
+}
+
+comments comments comments comments a.comment_author.ng-binding {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+comments comments comments time.ng-binding {
+    color: #e7e7e7;
+}
+
+@media only screen and (min-width: 600px) {
+  .inTheThread.ng-scope {
+      padding: 8px;
+      padding-left: 20px;
+  }
+
+  .threadTopper {
+    max-width: 75%;
+}
+
+.commentArea {
+  max-width: 75%;
+  background: white;
+  padding: 13px;
+  border-radius: 14px;
+}
+}
