@@ -35,19 +35,19 @@ app.use(session({
 }))
 
 //// MASSIVE DB ==========================================
-// massive({
-	// host: "localhost",
-	// port: 5432,
-//	database: LOCALconfig.database
-// user: config.dbuser,
-// password: config.dbpass
-
-//connect to elepahnt sql
-massive(config.connection_string).then(db => {
-	app.set('db', db);
-
-// }).then(db => {
+ massive({
+	 host: "localhost",
+	 port: 5432,
+	database: LOCALconfig.database
+ // user: config.dbuser,
+ // password: config.dbpass
+//
+// //connect to elepahnt sql
+// massive(config.connection_string).then(db => {
 // 	app.set('db', db);
+
+}).then(db => {
+	app.set('db', db);
 
 });
 
@@ -90,13 +90,21 @@ passport.use(new Auth0Strategy({
   //if user doesnt EXISTS, add to database
   // looks for existing id
   app.get('db').ifUserExists([user[0]]).then(function(resp){
+    //console.log(resp.length)
     if (resp.length < 1) {
       app.get('db').create_user(user).then(function(resp){
         //console.log(user)
         return done(null, user);
       })
     } else {
-      //console.log("now this" , user)
+      //user = resp[0]
+      user = [
+        resp[0].id,
+        resp[0].username,
+        resp[0].admin
+      ]
+
+      //console.log(user)
       return done(null, user);
     }
     //return done(null, user);
@@ -189,9 +197,18 @@ app.put('/unreadthread', notificationsController.new_unread_for_all)
 // post new comment ========================== POST NEW comment
 app.post('/newcomment', forumController.new_comment)
 
+// feed top for users with thread starred! ================= FEED top
+app.put('/feed_top/:thread_id', threadController.feed_top)
+app.put('/add_feed_top/:thread_id/:user_id', threadController.add_feed_top)
 
 // REPORT a comment ============================ REPORT
 app.put('/reportcomment/:id', forumController.reportcomment)
+
+// get all feed_top for user_id
+app.get('/get_feed_top/:current_user', forumController.get_feed_top)
+//remove top feed once user sees thread
+app.put('/remove_top/:user_id/:thread_id', forumController.remove_top)
+
 
 
 // is current thread starred ====== STAR
