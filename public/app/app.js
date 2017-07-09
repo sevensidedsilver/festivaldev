@@ -19,6 +19,12 @@ angular.module('app', ['ui.router'])
           templateUrl: "./app/views/prepare.html"
         })
 
+        .state('volunteer', {
+          url:'/volunteer',
+          templateUrl: "./app/views/volunteer/volunteer.html"
+
+        })
+
         .state('events', {
           url: '/events',
           templateUrl: "./app/views/events/events.html",
@@ -34,23 +40,23 @@ angular.module('app', ['ui.router'])
           url: '/create-event',
           controller: "events",
           templateUrl: "./app/views/events/create-event.html",
-          // resolve: {
-          //   user: (authService, $state) => {
-          //       return authService.getCurrentUser().then((response) => {
-          //         console.log(response.data.user[2])
-          //          if (response.data.user[2] === 0 || response.data.user[2] === undefined) {
-          //            window.alert("Only admins can create events.")
-          //            $state.go('forum')
-          //          }
-          //
-          //           if(!response.data) {
-          //               window.location = "http://localhost:3000/auth"
-          //           } return response.data
-          //       }).catch(err => {
-          //           window.location = "http://localhost:3000/auth"
-          //       })
-          //   }
-          // }
+          resolve: {
+            user: (authService, $state) => {
+                return authService.getCurrentUser().then((response) => {
+                  console.log(response.data.user[2])
+                   if (response.data.user[2] === 0 || response.data.user[2] === undefined) {
+                     window.alert("Only admins can create events.")
+                     $state.go('forum')
+                   }
+
+                    if(!response.data) {
+                        window.location = "http://localhost:3000/auth"
+                    } return response.data
+                }).catch(err => {
+                    window.location = "http://localhost:3000/auth"
+                })
+            }
+          }
         })
 
         .state('principles', {

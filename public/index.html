@@ -41,9 +41,28 @@
         <div ui-sref="events" class="menuItem">
           <p>EVENTS</p>
         </div>
-        <div ui-sref="prepare" class="menuItem">
-          <p>PREPARE</p>
+
+
+
+
+        <div class="dropdown">
+          <div ui-sref="prepare" class="menuItem dropdown">
+            <p>PREPARE</p>
+          </div>
+          <div class="dropdown-content">
+            <div id="prepareSub">
+              <div ui-sref="volunteer" class="menuItem">
+                <p>VOLUNTEER</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
+
+
+
         <div ui-sref="principles" class="menuItem">
           <p>PRINCIPLES</p>
         </div>
@@ -82,6 +101,9 @@
     </div>
     <div class="mobile-menu-row">
       <a ui-sref="prepare" ng-click="togglemenu()"><p>PREPARE</p></a>
+    </div>
+    <div class="mobile-menu-row">
+      <a ui-sref="volunteer" ng-click="togglemenu()"><p>VOLUNTEER</p></a>
     </div>
     <div class="mobile-menu-row">
       <a ui-sref="principles" ng-click="togglemenu()"><p>PRINCIPLES</p></a>

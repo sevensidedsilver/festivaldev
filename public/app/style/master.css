@@ -95,17 +95,102 @@ a#logolink {
     height: 100%;
     align-items: center;
     display: flex;
-    padding: 0 6px;
+    padding: 0 15px;
     font-size: 1.3em;
     font-weight: 700;
     transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.menuItem p {
+    padding-top: 23px;
+}
+
+
+
+
 .menuItem:hover {
     background: white;
     color: #9C96E8;
     transition: .5s;
     cursor: pointer;
 }
+
+
+
+
+
+
+/*
+Display hover menu*/
+.hoverMenu {
+
+    border: none;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .grab {
   float: right;
