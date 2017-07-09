@@ -19,6 +19,40 @@ angular.module('app', ['ui.router'])
           templateUrl: "./app/views/prepare.html"
         })
 
+        .state('events', {
+          url: '/events',
+          templateUrl: "./app/views/events/events.html",
+          controller: "events",
+
+        })
+        .state('event', {
+          url: '/event/:id',
+          templateUrl: "./app/views/events/event.html",
+          controller: "event",
+        })
+        .state('create-event', {
+          url: '/create-event',
+          controller: "events",
+          templateUrl: "./app/views/events/create-event.html",
+          // resolve: {
+          //   user: (authService, $state) => {
+          //       return authService.getCurrentUser().then((response) => {
+          //         console.log(response.data.user[2])
+          //          if (response.data.user[2] === 0 || response.data.user[2] === undefined) {
+          //            window.alert("Only admins can create events.")
+          //            $state.go('forum')
+          //          }
+          //
+          //           if(!response.data) {
+          //               window.location = "http://localhost:3000/auth"
+          //           } return response.data
+          //       }).catch(err => {
+          //           window.location = "http://localhost:3000/auth"
+          //       })
+          //   }
+          // }
+        })
+
         .state('principles', {
           url: '/principles',
           templateUrl: "./app/views/principles.html",

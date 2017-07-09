@@ -10,6 +10,7 @@ module.exports = {
 
     let title = req.body.title
     let location = req.body.location
+    let displaydate = req.body.displayDate
     let date = req.body.date
     let starttime = req.body.startTime
     let endtime = req.body.endTime
@@ -22,7 +23,7 @@ module.exports = {
     let desc4 = req.body.desc4
     let desc5 = req.body.desc5
     req.app.get('db').add_event(
-      [title, location, date, starttime, endtime, goal, image, fbevent, desc1, desc2, desc3, desc4, desc5]
+      [title, location, displaydate, date, starttime, endtime, goal, image, fbevent, desc1, desc2, desc3, desc4, desc5]
     ).then(function(resp){
       res.status(200).send(resp)
     })
@@ -30,8 +31,29 @@ module.exports = {
 
 
 
+// GET ALL events
+  getAllEvents : function(req, res){
+    req.app.get('db').events_get_all().then(resp => {
+      res.status(200).send(resp)
+    })
+  },
 
+// get one event by id
+getEvent : (req, res) => {
+  req.app.get('db').get_event([req.params.id]).then(resp => {
 
+    res.status(200).send(resp)
+  })
+
+},
+
+//event is over
+eventOver: (req, res) => {
+  req.app.get('db').event_over([req.params.id]).then(resp=> {
+    res.status(200).send(resp)
+  })
+
+}
 
 
 

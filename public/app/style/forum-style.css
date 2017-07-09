@@ -75,11 +75,12 @@ button.admin.ng-binding:hover {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-
+    background: url("../app/images/nebula.jpg");
+    min-height: 100vh;
   }
 
 .threadOuter h2 {
-    margin-top: 3vh;
+    margin-top: 13vh;
 }
 
 h2.newComments {

@@ -1,63 +1,69 @@
-<div style="height: 60px"></div>
+
 
 <div class="threadOuter">
+<div class="spaceContain">
+  <h2>Rhaphorum - The Rhapsody Forum</h2>
 
-<h2>Rhaphorum - The Rhapsody Forum</h2>
+  <div class="updates" ng-if="thread_updates">
+    <div class="updatesList">
+      <h2 class = "newComments">New Comments on Threads You Starred</h2>
+      <div class="oneUpdate threadTitle" ng-repeat="thread in updated_threads">
 
-<div class="updates" ng-if="thread_updates">
-  <div class="updatesList">
-    <h2 class = "newComments">New Comments on Threads You Starred</h2>
-    <div class="oneUpdate threadTitle" ng-repeat="thread in updated_threads">
+        <h3 ui-sref="thread({thread_id: thread.thread_id})">{{thread.thread_title}}</h3>
+        <h4>by {{thread.author_display}}</h4>
 
-      <h3 ui-sref="thread({thread_id: thread.thread_id})">{{thread.thread_title}}</h3>
-      <h4>by {{thread.author_display}}</h4>
-
+      </div>
     </div>
   </div>
-</div>
-<div class="buttonContain">
-  <div class="newThreadContain">
-    <button ui-sref="addpost" class="add-post" type="button" name="button">New Post</button>
-  </div>
-
-  <div class="modContain" ng-if="moderate">
-    <button ui-sref="admin" class="admin" type="button" name="button">Moderate ({{modNumber}})</button>
-  </div>
-</div>
-
-
-
-
-  <div class="threadsContainer">
-    <div class="searchThreads">
-      <h4>Search:</h4>
-      <input ng-model="query" type="text" name="search" placeholder="seach by title or author">
+  <div class="buttonContain">
+    <div class="newThreadContain">
+      <button ui-sref="addpost" class="add-post" type="button" name="button">New Post</button>
     </div>
 
-    <div class="threadslist" ng-repeat="thread in threads | orderBy: '-thread_id'">
+    <div class="modContain" ng-if="moderate">
+      <button ui-sref="admin" class="admin" type="button" name="button">Moderate ({{modNumber}})</button>
+    </div>
+  </div>
 
 
 
-      <div class="threadItem">
 
-
-        <div class="thread">
-          <div class="threadTitle">
-            <h3 ui-sref="thread({thread_id: thread.thread_id})">{{thread.thread_title}}</h3>
-          </div>
-            <div class="threadAuthor">
-              <p>{{thread.timeAgo}} by <a href="#" class="author">{{thread.author_display}}</a></p>
-            </div>
-        </div>
+    <div class="threadsContainer">
+      <div class="searchThreads">
+        <h4>Search:</h4>
+        <input ng-model="query" type="text" name="search" placeholder="seach by title or author">
       </div>
 
+      <div class="threadslist" ng-repeat="thread in threads | orderBy: '-thread_id' | filter:query ">
+
+
+
+        <div class="threadItem">
+
+
+          <div class="thread">
+            <div class="threadTitle">
+              <h3 ui-sref="thread({thread_id: thread.thread_id})">{{thread.thread_title}}</h3>
+            </div>
+              <div class="threadAuthor">
+                <p>{{thread.timeAgo}} by <a href="#" class="author">{{thread.author_display}}</a></p>
+              </div>
+          </div>
+        </div>
 
 
 
 
+
+
+      </div>
 
     </div>
 
-  </div>
+
+
+
+</div>
+
 
 </div>

@@ -9,7 +9,14 @@
 
   <title>Rhapsody Festival | Eastern NC</title></head>
 <body ng-controller='homeCtrl'>
-
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
   <div id="nav">
 
@@ -30,6 +37,9 @@
         </div>
         <div ui-sref="forum" class="menuItem">
           <p>FORUM</p>
+        </div>
+        <div ui-sref="events" class="menuItem">
+          <p>EVENTS</p>
         </div>
         <div ui-sref="prepare" class="menuItem">
           <p>PREPARE</p>
@@ -68,6 +78,9 @@
       <a ui-sref="forum" ng-click="togglemenu()"><p>RHAPHORUM</p></a>
     </div>
     <div class="mobile-menu-row">
+      <a ui-sref="events" ng-click="togglemenu()"><p>EVENTS</p></a>
+    </div>
+    <div class="mobile-menu-row">
       <a ui-sref="prepare" ng-click="togglemenu()"><p>PREPARE</p></a>
     </div>
     <div class="mobile-menu-row">
@@ -86,14 +99,26 @@
     <div class="footerbits">
       <div class="footerRow">
         <div class="footerColumn">
-          maybe a menu?
+          <a href="https://www.facebook.com/rhapsodyfestival/"><img class="fb-icon" src="./app/images/fb-icon.png" alt="facebook link"></a>
+
+
+          <div class="fb-like" data-href="https://www.facebook.com/rhapsodyfestival/" data-width="45" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
+
         </div>
+
         <div class="footerColumn">
-          maybe some contact info?
+          <div class="footerNav">
+            <li>HOME</li>
+            <li>FORUM</li>
+            <li>EVENTS</li>
+            <li>PREPARE</li>
+            <li>PRINCIPLES</li>
+            <li>FIRE</li>
+          </div>
+
         </div>
-        <div class="footerColumn">
-          maybe associated sites?
-        </div>
+
       </div>
 
 

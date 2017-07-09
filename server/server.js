@@ -167,8 +167,12 @@ app.get('/auth/logout', function(req, res) {
 
 // EVENT ENDPOINTS
 app.post('/create-event', eventController.newEvent)
-
-
+/// get all events
+app.get('/get-all-events', eventController.getAllEvents)
+// get one event by id
+app.get('/get-event/:id', eventController.getEvent)
+// mark event as over
+app.put('/event-happened/:id', eventController.eventOver)
 
 
 
