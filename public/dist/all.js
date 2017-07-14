@@ -637,6 +637,9 @@ angular.module('app').controller('thread', function ($scope, $state, threadServi
 });
 'use strict';
 
+angular.module('app').controller('volunteerController', function ($scope, $state, volunteerService, $http, $window, $stateParams, homeSrv) {});
+'use strict';
+
 angular.module('app').directive('comments', function ($compile) {
   return {
     restrict: "E",
@@ -1052,6 +1055,9 @@ angular.module('app').service('threadService', function ($http) {
     });
   };
 });
+'use strict';
+
+angular.module('app').service('volunteerService', function ($http) {});
 'use strict';
 
 angular.module('app').controller('principles', function (adminService, $state, threadService, authService, $scope, $http, $window, $stateParams, principlesService) {
